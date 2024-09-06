@@ -49,16 +49,8 @@ class Macaco extends Animal {
         super('macaco',1,['savana','floresta'],false,quantidade)
     }
 
-    macacoAcompanhado(numeroDeMacacos){ // verifica se o macaco está acompanhado de outros macacos
-        if(numeroDeMacacos>1){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     estaConfortavel(recinto){
-        if(super.existeOutroAnimal(recinto) || this.macacoAcompanhado(this.quantidade)){ // verifica se o macaco não esta sozinho
+        if(super.existeOutroAnimal(recinto) || this.quantidade>1){ // verifica se o macaco não esta sozinho
             return super.estaConfortavel(recinto)
         }else{
             return false
